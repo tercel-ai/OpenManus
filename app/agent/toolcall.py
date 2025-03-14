@@ -59,6 +59,9 @@ class ToolCallAgent(ReActAgent):
             logger.info(
                 f"🧰 Tools being prepared: {[call.function.name for call in response.tool_calls]}"
             )
+        else:
+            # If no tool calls, set state to finished
+            self.state = AgentState.FINISHED
 
         try:
             # Handle different tool_choices modes
