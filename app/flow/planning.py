@@ -158,7 +158,11 @@ class PlanningFlow(BaseFlow):
                 "command": "create",
                 "plan_id": self.active_plan_id,
                 "title": f"Plan for: {request[:50]}{'...' if len(request) > 50 else ''}",
-                "steps": ["Analyze request", "Execute task", "Verify results"],
+                "steps": [
+                    "[ANALYZE] Analyze request and determine approach",
+                    "[EXECUTE] Execute the main task",
+                    "[VERIFY] Verify results and ensure completion"
+                ],
             }
         )
 
